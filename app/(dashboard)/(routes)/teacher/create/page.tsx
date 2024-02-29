@@ -16,6 +16,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import toast from "react-hot-toast";
@@ -41,7 +42,8 @@ export default function CreatePage() {
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       const response = await axios.post("/api/courses", values);
-      router.push(`/teacher/course/${response.data.id}`);
+      router.push(`/teacher/courses/${response.data.id}`);
+      toast.success("Course created");
     } catch {
       toast.error("Something went wrong!");
     }
