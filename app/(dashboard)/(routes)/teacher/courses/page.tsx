@@ -1,3 +1,12 @@
-export default function Courses() {
-  return <div>Teacher Courses</div>;
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
+
+export default function CoursesPage() {
+  return (
+    <div className="p-6">
+      <Link href="/teacher/create">
+        <Button>New Courses</Button>
+      </Link>
+    </div>
+  );
 }
