@@ -1,5 +1,5 @@
 import Logo from "./Logo";
-import SidebarRoutes from "./Sidebar-routes";
+import SidebarRoutes from "./SidebarRoutes";
 
 export default function Sidebar() {
   return (
