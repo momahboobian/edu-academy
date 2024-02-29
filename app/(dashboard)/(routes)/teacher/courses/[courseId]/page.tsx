@@ -1,7 +1,9 @@
 import { auth } from "@clerk/nextjs";
-
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
+import { LayoutDashboard } from "lucide-react";
+
+import IconBadge from "@/components/icon-badge";
 
 export default async function CourseIdPage({
   params,
@@ -51,6 +53,7 @@ export default async function CourseIdPage({
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-16">
         <div>
           <div className="flex items-center gap-x-2">
+            <IconBadge icon={LayoutDashboard} />
             <h2 className="text-sl">Customise your course</h2>
           </div>
         </div>
