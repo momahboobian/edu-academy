@@ -7,6 +7,7 @@ import IconBadge from "@/components/icon-badge";
 
 import TitleForm from "./_components/TitleForm";
 import DescriptionForm from "./_components/DescriptionForm";
+import ImageForm from "./_components/ImageForm";
 
 export default async function CourseIdPage({
   params,
@@ -62,6 +63,7 @@ export default async function CourseIdPage({
 
           <TitleForm initialData={course} courseId={course.id} />
           <DescriptionForm initialData={course} courseId={course.id} />
+          <ImageForm initialData={course} courseId={course.id} />
         </div>
       </div>
     </div>
