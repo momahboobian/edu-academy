@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/button";
 import { Pencil } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
+import formatPrice from "@/lib/format";
 
 interface PriceFormProps {
   initialData: Course;
@@ -83,7 +84,7 @@ export default function PriceForm({ initialData, courseId }: PriceFormProps) {
             !initialData.price && "text-slate-500 italic"
           )}
         >
-          {initialData.price || "No price"}
+          {initialData.price ? formatPrice(initialData.price) : "No price"}
         </p>
       )}
       {isEditing && (
