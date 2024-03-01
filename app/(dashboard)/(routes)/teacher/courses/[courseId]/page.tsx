@@ -1,10 +1,12 @@
 import { auth } from "@clerk/nextjs";
-import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 import { LayoutDashboard } from "lucide-react";
 
+import { db } from "@/lib/db";
 import IconBadge from "@/components/icon-badge";
+
 import TitleForm from "./_components/TitleForm";
+import DescriptionForm from "./_components/DescriptionForm";
 
 export default async function CourseIdPage({
   params,
@@ -59,6 +61,7 @@ export default async function CourseIdPage({
           </div>
 
           <TitleForm initialData={course} courseId={course.id} />
+          <DescriptionForm initialData={course} courseId={course.id} />
         </div>
       </div>
     </div>
