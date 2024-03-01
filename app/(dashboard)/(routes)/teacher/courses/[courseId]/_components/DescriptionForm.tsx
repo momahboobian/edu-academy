@@ -15,8 +15,9 @@ import {
   FormItem,
   FormMessage,
 } from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+
 import { Pencil } from "lucide-react";
 import { cn } from "@/lib/utils";
 
@@ -100,9 +101,9 @@ export default function DescriptionForm({
               render={({ field }) => (
                 <FormItem>
                   <FormControl>
-                    <Input
+                    <Textarea
                       disabled={isSubmitting}
-                      placeholder="e.g. 'How to present'"
+                      placeholder="e.g. 'This course is about...'"
                       {...field}
                     />
                   </FormControl>
