@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { Pencil, PlusCircle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Input } from "@/components/ui/input";
+import ChaptersList from "./ChaptersList";
 
 interface ChaptersFormProps {
   initialData: Course & { chapters: Chapter };
@@ -118,7 +119,11 @@ export default function ChaptersForm({
           )}
         >
           {!initialData.chapters.length && "No chapters"}
-          {/* TODO: Add a list of chapters */}
+          <ChaptersList
+            onEdit={() => {}}
+            onReorder={() => {}}
+            items={initialData.chapters || []}
+          />
         </div>
       )}
 
