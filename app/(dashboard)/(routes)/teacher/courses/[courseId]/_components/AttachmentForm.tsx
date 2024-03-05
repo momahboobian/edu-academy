@@ -5,16 +5,15 @@ import * as z from "zod";
 import axios from "axios";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import { Course } from "@prisma/client";
-import Image from "next/image";
+import { Attachment, Course } from "@prisma/client";
 
 import { Button } from "@/components/ui/button";
 import FileUpload from "@/components/file-upload";
 
-import { ImageIcon, Pencil, PlusCircle } from "lucide-react";
+import { PlusCircle } from "lucide-react";
 
 interface AttachmentFormProps {
-  initialData: Course & { attachments: Attachement[] };
+  initialData: Course & { attachments: Attachment[] };
   courseId: string;
 }
 
@@ -46,7 +45,7 @@ export default function AttachmentForm({
   return (
     <div className="mt-4 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
-        Course attachment
+        Course attachments
         <Button onClick={toggleEdit} variant="ghost">
           {isEditing && <>Cancel</>}
 
@@ -78,7 +77,7 @@ export default function AttachmentForm({
             }}
           />
           <div className="text-ts text-muted-foreground mt-4">
-            Add anything your students might need to complete the course!
+            Add anything your students might need to complete the course.
           </div>
         </div>
       )}
