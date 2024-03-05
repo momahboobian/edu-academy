@@ -67,7 +67,7 @@ export default function ChaptersForm({
     try {
       setIsUpdating(true);
 
-      await axios.put(`/api.courses/${courseId}/chapters/reorder`, {
+      await axios.put(`/api/courses/${courseId}/chapters/reorder`, {
         list: updateData,
       });
       toast.success("Chapters reordered");
