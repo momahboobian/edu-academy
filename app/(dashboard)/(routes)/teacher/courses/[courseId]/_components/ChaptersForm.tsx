@@ -63,6 +63,22 @@ export default function ChaptersForm({
     }
   };
 
+  const onReorder = async (updateData: { id: string; position: number }[]) => {
+    try {
+      setIsUpdating(true);
+
+      await axios.put(`/api.courses/${courseId}/chapters/reorder`, {
+        list: updateData,
+      });
+      toast.success("Chapters reordered");
+      router.refresh();
+    } catch {
+      toast.error("Something Wend wrong");
+    } finally {
+      setIsCreating(false);
+    }
+  };
+
   return (
     <div
       className="mt-4 border bg-slate-100 rounded-md
@@ -76,7 +92,7 @@ export default function ChaptersForm({
           ) : (
             <>
               <PlusCircle className="h-4 w-4 mr-2" />
-              Edit chapter
+              Add a chapter
             </>
           )}
         </Button>
@@ -121,7 +137,7 @@ export default function ChaptersForm({
           {!initialData.chapters.length && "No chapters"}
           <ChaptersList
             onEdit={() => {}}
-            onReorder={() => {}}
+            onReorder={onReorder}
             items={initialData.chapters || []}
           />
         </div>
