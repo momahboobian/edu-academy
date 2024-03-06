@@ -1,17 +1,16 @@
 "use client";
-import { useState } from "react";
 
 import * as z from "zod";
 import axios from "axios";
+import MuPlayer from "@mux/mux-player-react";
+import { Pencil, PlusCircle, VideoIcon } from "lucide-react";
+import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 import { Chapter } from "@prisma/client";
-import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import FileUpload from "@/components/file-upload";
-
-import { Pencil, PlusCircle, VideoIcon } from "lucide-react";
 
 interface ChapterVideoFormProps {
   initialData: Chapter & { muxData?: MuxData | null };
@@ -75,7 +74,9 @@ export default function ChapterVideoForm({
             <VideoIcon className="h-10 w-10 text-slate-500" />
           </div>
         ) : (
-          <div className="relative aspect-video mt-2">Video uploaded!</div>
+          <div className="relative aspect-video mt-2">
+            <MuPlayer playbackId={initialData?.muxData?.playbackId || ""} />
+          </div>
         ))}
       {isEditing && (
         <div>
