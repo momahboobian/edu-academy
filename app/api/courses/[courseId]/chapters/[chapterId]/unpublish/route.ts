@@ -37,12 +37,12 @@ export async function PATCH(
 
     const publishedChapterInCourse = await db.chapter.findMany({
       where: {
-        courseId: params.chapterId,
+        courseId: params.courseId,
         isPublished: true,
       },
     });
 
-    if (!publishedChapterInCourse) {
+    if (!publishedChapterInCourse.length) {
       await db.course.update({
         where: {
           id: params.courseId,
@@ -56,6 +56,6 @@ export async function PATCH(
     return NextResponse.json(unpublishedChapter);
   } catch (error) {
     console.log("[CHAPTER_UNPUBLISH]", error);
-    return new NextResponse("Internal Error", { status: 401 });
+    return new NextResponse("Internal Error", { status: 500 });
   }
 }

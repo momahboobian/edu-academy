@@ -68,7 +68,7 @@ export default function CourseActions({
         variant="outline"
         size="sm"
       >
-        {isPublished ? "UnPublish" : "Publish"}
+        {isPublished ? "Unpublish" : "Publish"}
       </Button>
       <ConfirmModal onConfirm={unDelete}>
         <Button size="sm" disabled={isLoading}>

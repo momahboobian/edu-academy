@@ -45,7 +45,7 @@ export async function PATCH(
       !chapter.description ||
       !chapter.videoUrl
     ) {
-      return new NextResponse("Missing required fields", { status: 401 });
+      return new NextResponse("Missing required fields", { status: 400 });
     }
 
     const publishedChapter = await db.chapter.update({
@@ -61,6 +61,6 @@ export async function PATCH(
     return NextResponse.json(publishedChapter);
   } catch (error) {
     console.log("[CHAPTER_PUBLISH]", error);
-    return new NextResponse("Internal Error", { status: 401 });
+    return new NextResponse("Internal Error", { status: 500 });
   }
 }
