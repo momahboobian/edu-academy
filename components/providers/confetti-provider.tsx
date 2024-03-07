@@ -7,15 +7,16 @@ import { useConfettiStore } from "@/hooks/use-confetti-store";
 export default function ConfettiProvider() {
   const confetti = useConfettiStore();
 
-  if (!confetti) return null;
+  if (!confetti.isOpen) return null;
 
-  return;
-  <ReactConfetti
-    className="pointer-events-none z-[100]"
-    numberOfPieces={500}
-    recycle={false}
-    onConfettiComplete={() => {
-      confetti.onClose();
-    }}
-  />;
+  return (
+    <ReactConfetti
+      className="pointer-events-none z-[100]"
+      numberOfPieces={500}
+      recycle={false}
+      onConfettiComplete={() => {
+        confetti.onClose();
+      }}
+    />
+  );
 }
