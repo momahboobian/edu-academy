@@ -40,6 +40,8 @@ export default function ChapterActions({
         );
         toast.success("Chapter published");
       }
+
+      router.refresh();
     } catch {
       toast.error("Something went wrong");
     } finally {
@@ -54,8 +56,9 @@ export default function ChapterActions({
       await axios.delete(`/api/courses/${courseId}/chapters/${chapterId}`);
 
       toast.success("Chapter deleted");
-      router.refresh();
       router.push(`/teacher/courses/${courseId}`);
+
+      router.refresh();
     } catch {
       toast.error("Something went wrong");
     } finally {
