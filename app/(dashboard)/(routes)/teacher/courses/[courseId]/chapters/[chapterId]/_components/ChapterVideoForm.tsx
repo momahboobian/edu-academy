@@ -41,6 +41,7 @@ export default function ChapterVideoForm({
       );
       toast.success("Chapter updated");
       toggleEdit();
+
       router.refresh();
     } catch {
       toast.error("Something went wrong");
