@@ -1,9 +1,12 @@
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { Separator } from "@/components/ui/separator";
 
 import { getChapter } from "@/actions/get-chapters";
 import Banner from "@/components/Banner";
 import VideoPlayer from "./_components/VideoPlayer";
+import CourseEnrollButton from "./_components/CourseEnrollButton";
+import { Preview } from "@/components/Preview";
 
 export default async function ChapterIdPage({
   params,
@@ -57,6 +60,23 @@ export default async function ChapterIdPage({
             isLocked={isLocked}
             completeOnEnd={completeOnEnd}
           />
+        </div>
+        <div>
+          <div className="p-4 flex flex-col md:flex-row items-center justify-between">
+            <h2 className="text-2xl font-semibold mb-2">{chapter.title}</h2>
+            {purchase ? (
+              <div>{/* // TODO: Add CourseProgressButton */}</div>
+            ) : (
+              <CourseEnrollButton
+                courseId={params.courseId}
+                price={course.price!}
+              />
+            )}
+          </div>
+          <Separator />
+          <div>
+            <Preview value={chapter.description!} />
+          </div>
         </div>
       </div>
     </div>
