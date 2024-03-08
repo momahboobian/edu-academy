@@ -1,12 +1,13 @@
 "use client";
 
+import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
 
 import { Button } from "./ui/button";
 import { LogOut } from "lucide-react";
-import Link from "next/link";
-import SearchInput from "./SearchInput";
+
+import SearchInput from "@/components/SearchInput";
 
 export default function NavbarRoutes() {
   const pathname = usePathname();
