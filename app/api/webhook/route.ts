@@ -7,7 +7,7 @@ import { db } from "@/lib/db";
 
 import React from "react";
 
-export default async function POST(req: Request) {
+export async function POST(req: Request) {
   const body = await req.text();
   const signature = headers().get("Stripe-Signature") as string;
 
