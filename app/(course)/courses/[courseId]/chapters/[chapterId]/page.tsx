@@ -1,5 +1,7 @@
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { File } from "lucide-react";
+
 import { Separator } from "@/components/ui/separator";
 
 import { getChapter } from "@/actions/get-chapters";
@@ -77,6 +79,24 @@ export default async function ChapterIdPage({
           <div>
             <Preview value={chapter.description!} />
           </div>
+          {!!attachments.length && (
+            <>
+              <Separator />
+              <div className="p-4">
+                {attachments.map((attachment) => (
+                  <a
+                    href={attachment.url}
+                    target="_blank"
+                    key={attachment.id}
+                    className="flex items-center p-3 w-full bg-sky-200 border text-sky-700 rounded-md hover:underline"
+                  >
+                    <File />
+                    <p>{attachment.name}</p>
+                  </a>
+                ))}
+              </div>
+            </>
+          )}
         </div>
       </div>
     </div>
