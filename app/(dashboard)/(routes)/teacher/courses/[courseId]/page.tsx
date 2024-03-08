@@ -8,8 +8,8 @@ import {
 } from "lucide-react";
 
 import { db } from "@/lib/db";
-import IconBadge from "@/components/icon-badge";
-import Banner from "@/components/banner";
+import IconBadge from "@/components/IconBadge";
+import Banner from "@/components/Banner";
 
 import TitleForm from "./_components/TitleForm";
 import DescriptionForm from "./_components/DescriptionForm";

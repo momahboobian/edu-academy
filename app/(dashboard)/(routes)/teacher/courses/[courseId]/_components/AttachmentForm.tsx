@@ -8,7 +8,7 @@ import { useRouter } from "next/navigation";
 import { Attachment, Course } from "@prisma/client";
 
 import { Button } from "@/components/ui/button";
-import FileUpload from "@/components/file-upload";
+import FileUpload from "@/components/FileUpload";
 
 import { File, Loader2, PlusCircle, X } from "lucide-react";
 
