@@ -1,5 +1,21 @@
 import Image from "next/image";
 
-export default function Logo() {
-  return <Image height={130} width={130} alt="logo" src={"/logo.svg"} />;
+interface LogoProps {
+  size: number;
+  color: string;
+  invert: string;
+}
+
+export default function Logo({ size, invert }: LogoProps) {
+  return (
+    <Image
+      src="/logo.svg"
+      alt="logo"
+      width={size}
+      height={size}
+      style={{
+        filter: `brightness(0) invert(${invert}) sepia(1) saturate(5) hue-rotate(175deg)`,
+      }}
+    />
+  );
 }

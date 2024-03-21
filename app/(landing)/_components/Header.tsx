@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 
+import Logo from "../../../components/Logo";
 import { socialData } from "../data.json";
 
 interface HeaderProps {
@@ -29,8 +30,10 @@ export default function Header({ data }: HeaderProps) {
         <div className="mob-h-left">
           <Link href="/">
             <div className="navbar-brand">
+              <Logo size={180} invert="1" color="#fff" />
+              {/* 
               <Image src={logoDark} width={100} height={50} alt="logo" />
-              <Image src={logoLight} width={100} height={50} alt="logo" />
+              <Image src={logoLight} width={100} height={50} alt="logo" /> */}
             </div>
           </Link>
         </div>
@@ -50,22 +53,7 @@ export default function Header({ data }: HeaderProps) {
         {/* Brand */}
         <div className="logo">
           <Link href="/">
-            <div className="navbar-brand">
-              <Image
-                src={logoDark}
-                width={100}
-                height={50}
-                alt="Logo"
-                title="Bolour Media"
-              />
-              <Image
-                src={logoLight}
-                width={100}
-                height={50}
-                alt="Logo"
-                title="Bolour Media"
-              />
-            </div>
+            <Logo size={180} invert="1" color="#fff" />
           </Link>
         </div>
         {/* / */}
