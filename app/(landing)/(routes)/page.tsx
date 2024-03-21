@@ -1,12 +1,13 @@
 "use client";
 
-import "bootstrap/dist/js/bootstrap.bundle";
+// import "bootstrap/dist/js/bootstrap.bundle";
 
 import { useEffect } from "react";
 import Aos from "aos";
 
 import Hero from "../_components/Hero";
 import data from "../data.json";
+import About from "../_components/About";
 
 export default function HomePage() {
   const {
@@ -28,6 +29,7 @@ export default function HomePage() {
   return (
     <main className="wrapper">
       <Hero data={heroData} />
+      <About data={aboutData} />
     </main>
   );
 }

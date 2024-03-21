@@ -28,12 +28,12 @@
   "aboutData": {
     "aboutLeft": {
       "ImgLink": "/images/about-banner.png",
-      "name": "Lilon Macwan",
+      "name": "Behzad Bolour",
       "designation": "Web Designer <span>based in</span> USA",
       "resumeCv": "/Resume.pdf"
     },
     "aboutRight": {
-      "aboutText": "Born in 2000, AB type living in USA. We provide on-screen design for websites and apps, as well as front-end implementation. We will continue to pursue a wide range of expressions and better code by pursuing our “likes”.",
+      "aboutText": "Senior editors and producers of BBC Persian since 1990,[2] and the producer and director of the program Bolour-e Banafsh.[1] Behzad is a member of the old family of Bolurforushan in Tehran.[1] His background his mother's side goes back to Abbas Mirza Qajar, and by his father to the importer of the Nickel silver and Crystal Factory of Iran, Mohammad-Hassan Bolurforushan..",
       "contactInfo": [
         {
           "icon": "phone",
@@ -41,18 +41,18 @@
         },
         {
           "icon": "person",
-          "data": "Lilon Macwan"
+          "data": "Behzad Bolour"
         },
         {
           "icon": "envelope",
-          "data": "lilonesigner@gmail.com"
+          "data": "info@behzadbolour.com"
         },
         {
           "icon": "map",
-          "data": "California, USA"
+          "data": "London, UK"
         }
       ],
-      "archivement": [
+      "achievement": [
         {
           "number": "10+",
           "meta": "Years <br /> experience...",

@@ -1,16 +1,33 @@
-import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
 import { useEffect } from "react";
-import perser from "html-react-parser";
+import parser from "html-react-parser";
 import { Link as ScrollLink } from "react-scroll";
 
-const Hero = ({ data }) => {
+interface SocialData {
+  icon: string;
+  link: string;
+}
+
+interface HeroProps {
+  data: {
+    title: string;
+    subTitle: string;
+    ImgLink: string;
+    phone: string;
+    email: string;
+    socialData: SocialData[];
+  };
+}
+
+export default function Hero({ data }: HeroProps) {
   const { title, subTitle, ImgLink, phone, email, socialData } = data;
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollValue = window.scrollY;
-      const heroElements = document.querySelector(".hb-me");
+      const heroElements = document.querySelector(
+        ".hb-me"
+      ) as HTMLElement | null;
       if (heroElements) {
         heroElements.style.right = `${scrollValue * -0.25}px`;
       }
@@ -32,7 +49,7 @@ const Hero = ({ data }) => {
                 data-aos-duration="800"
                 data-aos-delay="200"
               >
-                {perser(title)}
+                {parser(title)}
               </h1>
               <p
                 className="lead"
@@ -40,7 +57,7 @@ const Hero = ({ data }) => {
                 data-aos-duration="800"
                 data-aos-delay="400"
               >
-                {perser(subTitle)}
+                {parser(subTitle)}
               </p>
               <div
                 className="btn-bar"
@@ -95,10 +112,4 @@ const Hero = ({ data }) => {
       </div>
     </section>
   );
-};
-
-Hero.propTypes = {
-  data: PropTypes.object,
-};
-
-export default Hero;
+}
