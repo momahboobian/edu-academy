@@ -29,11 +29,11 @@
     "aboutLeft": {
       "ImgLink": "/images/about-banner.png",
       "name": "Behzad Bolour",
-      "designation": "Web Designer <span>based in</span> USA",
+      "designation": "Senior editors and producers <span>based in</span> UK",
       "resumeCv": "/Resume.pdf"
     },
     "aboutRight": {
-      "aboutText": "Senior editors and producers of BBC Persian since 1990,[2] and the producer and director of the program Bolour-e Banafsh.[1] Behzad is a member of the old family of Bolurforushan in Tehran.[1] His background his mother's side goes back to Abbas Mirza Qajar, and by his father to the importer of the Nickel silver and Crystal Factory of Iran, Mohammad-Hassan Bolurforushan..",
+      "aboutText": "Senior editors and producers of BBC Persian since 1990, and the producer and director of the program Bolour-e Banafsh. Behzad is a member of the old family of Bolurforushan in Tehran. His background his mother's side goes back to Abbas Mirza Qajar, and by his father to the importer of the Nickel silver and Crystal Factory of Iran, Mohammad-Hassan Bolurforushan.",
       "contactInfo": [
         {
           "icon": "phone",
@@ -56,12 +56,12 @@
         {
           "number": "10+",
           "meta": "Years <br /> experience...",
-          "text": "Hello there! My name is <span>Lilon Macwan</span>. I am a web designer & developer, and Im very passionate and dedicated to my work."
+          "text": "Hello there! My name is <span>Behzad Bolour</span>. I am a Senior editors and producers, and Im very passionate and dedicated to my work."
         },
         {
           "number": "50+",
           "meta": "Clients <br /> Worldwide...",
-          "text": "With 10+ years experience as a professional designer, I have acquired the skills to make your project a success."
+          "text": "With 10+ years experience as a professional producers, I have acquired the skills to make your project a success."
         }
       ],
       "note": "“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Faucibus sed sit ultrices et sed metus sollicitudin.”"
@@ -406,22 +406,23 @@
     "ImgLink": "/images/about-banner.png",
     "name": "lilon williamson"
   },
+
   "socialData": [
     {
       "icon": "twitter",
-      "link": ""
+      "link": "https://twitter.com/bolourtour"
     },
     {
       "icon": "instagram",
-      "link": ""
+      "link": "https://www.instagram.com/behzadbolour"
     },
     {
       "icon": "facebook",
-      "link": ""
+      "link": "https://www.facebook.com/bolour/"
     },
     {
       "icon": "pinterest",
-      "link": ""
+      "link": "https://www.youtube.com/@behzad.bolour"
     }
   ]
 }

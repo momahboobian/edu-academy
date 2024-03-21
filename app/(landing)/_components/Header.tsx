@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 
 import Logo from "../../../components/Logo";
-import { socialData } from "../data.json";
+// import { socialData } from "../data.json";
 
 interface HeaderProps {
   data: {
@@ -13,6 +13,25 @@ interface HeaderProps {
     logoLight: string;
   };
 }
+
+const socialData = [
+  {
+    icon: "twitter",
+    link: "https://twitter.com/bolourtour",
+  },
+  {
+    icon: "instagram",
+    link: "https://www.instagram.com/behzadbolour",
+  },
+  {
+    icon: "facebook",
+    link: "https://www.facebook.com/bolour/",
+  },
+  {
+    icon: "youtube",
+    link: "https://www.youtube.com/@behzad.bolour",
+  },
+];
 
 export default function Header({ data }: HeaderProps) {
   const { logoDark, logoLight } = data;
@@ -85,7 +104,7 @@ export default function Header({ data }: HeaderProps) {
               duration={500}
               onClick={() => setMobileToggle(false)}
             >
-              Services
+              Courses
             </ScrollLink>
           </li>
           <li>
@@ -119,7 +138,7 @@ export default function Header({ data }: HeaderProps) {
             </ScrollLink>
           </li>
         </ul>
-        {/* <ul className="nav social-link">
+        <ul className="nav social-link">
           {socialData.map((element, index) => (
             <li key={index}>
               <a href={element.link} target="_blank" rel="noopener noreferrer">
@@ -127,7 +146,7 @@ export default function Header({ data }: HeaderProps) {
               </a>
             </li>
           ))}
-        </ul> */}
+        </ul>
       </div>
       {/* End Header Top */}
     </header>
