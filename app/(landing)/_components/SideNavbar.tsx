@@ -1,14 +1,34 @@
-import Logo from "../../../components/Logo";
+"use client";
 
-export default function SideNavbar() {
+import { useEffect, useState } from "react";
+// import Header from '../components/Header/Header';
+import { headerData } from "../data.json";
+// import Preloader from '../components/Preloader/Preloader';
+// import CustomCursor from '../components/CustomCursor/CustomCursor';
+
+const Layout: React.FC = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+  }, []);
+
   return (
-    <div className="h-full border-r flex flex-col overflow-auto bg-white shadow-sm">
-      <div className="p-6">
-        <Logo />
-      </div>
-      <div className="flex flex-col w-full text-slate-500">
-        <h1>This is Side Navbar</h1>
-      </div>
-    </div>
+    <>
+      {/* {isLoading ? (
+        <Preloader />
+      ) : (
+        <>
+          <CustomCursor />
+          <Header data={headerData} />
+          {children}
+        </>
+      )} */}
+      This is side layout
+    </>
   );
-}
+};
+
+export default Layout;

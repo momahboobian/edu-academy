@@ -1,4 +1,5 @@
 "use client";
+
 import "bootstrap/dist/js/bootstrap.bundle";
 
 import { useEffect } from "react";
@@ -25,8 +26,8 @@ export default function HomePage() {
   }, []);
 
   return (
-    <div className="wrapper">
+    <main className="wrapper">
       <Hero data={heroData} />
-    </div>
+    </main>
   );
 }
