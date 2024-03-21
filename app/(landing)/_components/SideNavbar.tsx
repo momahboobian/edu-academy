@@ -1,10 +1,11 @@
 "use client";
 
 import { useEffect, useState } from "react";
-// import Header from '../components/Header/Header';
-import { headerData } from "../data.json";
+
+import Header from "./Header";
 // import Preloader from '../components/Preloader/Preloader';
 // import CustomCursor from '../components/CustomCursor/CustomCursor';
+import { headerData } from "../data.json";
 
 const Layout: React.FC = ({ children }) => {
   const [isLoading, setIsLoading] = useState(true);
@@ -21,12 +22,11 @@ const Layout: React.FC = ({ children }) => {
         <Preloader />
       ) : (
         <>
-          <CustomCursor />
-          <Header data={headerData} />
-          {children}
+          <CustomCursor /> */}
+      <Header data={headerData} />
+      {/* {children}
         </>
-      )} */}
-      This is side layout
+      )}  */}
     </>
   );
 };
