@@ -1,3 +1,7 @@
+import "../sass/style.scss";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "aos/dist/aos.css";
+
 import SideNavbar from "./_components/SideNavbar";
 
 export default function LandingLayout({
@@ -11,9 +15,9 @@ export default function LandingLayout({
         {/* <SideNavbar /> */}
       </div>
       <div className="hidden md:flex h-full w-56 flex-col fixed inset-y-0 z-50">
-        <SideNavbar />
+        {/* <SideNavbar /> */}
       </div>
-      <main className="md:pl-56 pt-[80px] h-full">{children}</main>
+      <main className="h-full">{children}</main>
     </div>
   );
 }

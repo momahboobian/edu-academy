@@ -1,12 +1,8 @@
 /** @type {import('next').NextConfig} */
-
-const withSass = require("@zeit/next-sass");
-
-module.exports = withSass({
-  sassOptions: {
-    includePaths: ["app/sass"],
-  },
+const nextConfig = {
   images: {
     domains: ["utfs.io"],
   },
-});
+};
+
+export default nextConfig;

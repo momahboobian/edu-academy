@@ -6,7 +6,7 @@ export default function SideNavbar() {
       <div className="p-6">
         <Logo />
       </div>
-      <div className="flex flex-col w-full">
+      <div className="flex flex-col w-full text-slate-500">
         <h1>This is Side Navbar</h1>
       </div>
     </div>

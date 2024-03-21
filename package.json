@@ -1,5 +1,5 @@
 {
-  "name": "edu-academy",
+  "name": "bolourmedia",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -12,6 +12,7 @@
     "@clerk/nextjs": "^4.29.8",
     "@hello-pangea/dnd": "^16.5.0",
     "@hookform/resolvers": "^3.3.4",
+    "@iconify/react": "^4.1.1",
     "@mux/mux-node": "^8.0.0",
     "@mux/mux-player-react": "^2.3.3",
     "@prisma/client": "^5.10.2",
@@ -32,8 +33,10 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "cmdk": "^0.2.1",
+    "html-react-parser": "^5.1.9",
     "lucide-react": "^0.343.0",
     "next": "^14.1.0",
+    "prop-types": "^15.8.1",
     "query-string": "^9.0.0",
     "react": "^18.2.0",
     "react-confetti": "^6.1.0",
@@ -43,6 +46,7 @@
     "react-hot-toast": "^2.4.1",
     "react-icons": "^5.0.1",
     "react-quill": "^2.0.0",
+    "react-scroll": "^1.9.0",
     "sass": "^1.72.0",
     "shadcn-ui": "^0.8.0",
     "stripe": "^14.20.0",
@@ -54,6 +58,8 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.7",
+    "@types/bootstrap": "^5.2.10",
     "@types/node": "^20.11.30",
     "@types/react": "^18.2.67",
     "@types/react-dom": "^18",
