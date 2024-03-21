@@ -19,9 +19,9 @@ export default function SidebarItem({
   const router = useRouter();
 
   const isActive =
-    (pathname === "/" && href === "/") ||
+    (pathname === "/academy/" && href === "/academy/") ||
     pathname === href ||
-    pathname?.startsWith(`${href}/`);
+    pathname?.startsWith(`${href}/academy/`);
 
   const onClick = () => {
     router.push(href);
