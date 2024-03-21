@@ -4,11 +4,11 @@
     "logoLight": "/images/logo-light.svg"
   },
   "heroData": {
-    "title": "My name<br />is <b>Lilon</b> <span><br />Macwan...</span>",
-    "subTitle": "<span>Web Designer</span> based in <span>USA</span>",
+    "title": "Welcome<br />to <b>the</b> <span><br />Bolour Academy...</span>",
+    "subTitle": "<span>From mastering </span> the art of <br /><span>journalism</span> to honing your <br />storytelling <span>skills </span>",
     "ImgLink": "/images/home-banner.png",
-    "phone": "+123 45 666 7788",
-    "email": "mccandesigner@gmail.com",
+    "phone": "+44 765 4321",
+    "email": "info@behzadbolour.com",
     "btnText": "Work with me",
     "socialData": [
       {
@@ -384,7 +384,7 @@
         "icon": "chat-left-dots-fill",
         "title": "Chat to us",
         "text": "Our friendly team is there to help.",
-        "emailLink": "info@domainname.com"
+        "emailLink": "info@behzadbolour.com"
       },
       {
         "icon": "compass",

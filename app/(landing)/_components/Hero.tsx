@@ -49,7 +49,7 @@ const Hero = ({ data }) => {
                 data-aos-delay="500"
               >
                 <ScrollLink to="contact" spy={true} className="px-btn">
-                  Work with ME
+                  About ME
                   <Icon icon="bi:arrow-up-right" />
                 </ScrollLink>
               </div>
@@ -59,14 +59,14 @@ const Hero = ({ data }) => {
                 data-aos-duration="800"
                 data-aos-delay="600"
               >
-                <p>
+                {/* <p>
                   <Icon icon="bi-phone" />
                   <span>{phone}</span>
                 </p>
                 <p>
                   <Icon icon="bi-envelope" />
                   <span>{email}</span>
-                </p>
+                </p> */}
               </div>
             </div>
           </div>
