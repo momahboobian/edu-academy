@@ -119,7 +119,7 @@ export default function Header({ data }: HeaderProps) {
             </ScrollLink>
           </li>
         </ul>
-        <ul className="nav social-link">
+        {/* <ul className="nav social-link">
           {socialData.map((element, index) => (
             <li key={index}>
               <a href={element.link} target="_blank" rel="noopener noreferrer">
@@ -127,7 +127,7 @@ export default function Header({ data }: HeaderProps) {
               </a>
             </li>
           ))}
-        </ul>
+        </ul> */}
       </div>
       {/* End Header Top */}
     </header>

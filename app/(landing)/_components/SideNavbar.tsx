@@ -5,9 +5,9 @@ import { useEffect, useState } from "react";
 import Header from "./Header";
 // import Preloader from '../components/Preloader/Preloader';
 // import CustomCursor from '../components/CustomCursor/CustomCursor';
-import { headerData } from "../data.json";
+import data from "../data.json";
 
-const Layout: React.FC = ({ children }) => {
+export default function Layout() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,12 +23,10 @@ const Layout: React.FC = ({ children }) => {
       ) : (
         <>
           <CustomCursor /> */}
-      <Header data={headerData} />
+      <Header data={data.headerData} />
       {/* {children}
         </>
       )}  */}
     </>
   );
-};
-
-export default Layout;
+}
