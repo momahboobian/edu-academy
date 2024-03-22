@@ -1,11 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
+// import "bootstrap/dist/js/bootstrap.bundle";
+import "bootstrap/dist/js/bootstrap.bundle";
 
 import Header from "./Header";
-// import Preloader from '../components/Preloader/Preloader';
-// import CustomCursor from '../components/CustomCursor/CustomCursor';
+
 import data from "../data.json";
+import Preloader from "./Preloader";
 
 export default function Layout() {
   const [isLoading, setIsLoading] = useState(true);
@@ -14,19 +19,23 @@ export default function Layout() {
     setTimeout(() => {
       setIsLoading(false);
     }, 1500);
+
+    Aos.init({ once: true });
+
+    typeof document !== undefined
+      ? require("bootstrap/dist/js/bootstrap.bundle")
+      : null;
   }, []);
 
   return (
     <>
-      {/* {isLoading ? (
+      {isLoading ? (
         <Preloader />
       ) : (
         <>
-          <CustomCursor /> */}
-      <Header data={data.headerData} />
-      {/* {children}
+          <Header data={data.headerData} />;
         </>
-      )}  */}
+      )}
     </>
   );
 }

@@ -138,7 +138,7 @@ export default function Header({ data }: HeaderProps) {
             </ScrollLink>
           </li>
         </ul>
-        <ul className="nav social-link">
+        <ul className=" social-link flex">
           {socialData.map((element, index) => (
             <li key={index}>
               <a href={element.link} target="_blank" rel="noopener noreferrer">

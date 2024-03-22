@@ -1,6 +1,5 @@
 import "../sass/style.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "aos/dist/aos.css";
 
 import SideNavbar from "./_components/SideNavbar";
 

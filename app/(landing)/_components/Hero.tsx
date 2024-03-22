@@ -60,7 +60,7 @@ export default function Hero({ data }: HeroProps) {
                 {parser(subTitle)}
               </p>
               <div
-                className="btn-bar"
+                className="mt-6"
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay="500"
@@ -71,7 +71,7 @@ export default function Hero({ data }: HeroProps) {
                 </ScrollLink>
               </div>
               <div
-                className="info-bar"
+                className="mt-6"
                 data-aos="fade-up"
                 data-aos-duration="800"
                 data-aos-delay="600"

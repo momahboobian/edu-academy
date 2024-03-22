@@ -52,7 +52,17 @@ export default function About({ data }: AboutProps) {
           <div className="col-lg-5">
             <div className="about-left">
               <div className="about-avatar">
-                <Image src={ImgLink} alt="Thumb" width={100} height={100} />
+                <Image
+                  src={ImgLink}
+                  alt="Thumb"
+                  sizes="100vw"
+                  style={{
+                    width: "100%",
+                    height: "auto",
+                  }}
+                  width={500}
+                  height={300}
+                />
               </div>
               <h3>{name}</h3>
               <p>{designation}</p>
