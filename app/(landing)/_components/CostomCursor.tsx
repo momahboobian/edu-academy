@@ -1,9 +1,21 @@
-import React from "react";
+"use client";
 
-const CustomCursor = () => {
-  const cursorSm = React.useRef(null);
-  const cursorLg = React.useRef(null);
-  const positionRef = React.useRef({
+import React, { useEffect, useRef } from "react";
+
+interface PositionRef {
+  mouseX: number;
+  mouseY: number;
+  destinationX: number;
+  destinationY: number;
+  distanceX: number;
+  distanceY: number;
+  key: number;
+}
+
+const CustomCursor: React.FC = () => {
+  const cursorSm = useRef<HTMLDivElement>(null);
+  const cursorLg = useRef<HTMLDivElement>(null);
+  const positionRef = useRef<PositionRef>({
     mouseX: 0,
     mouseY: 0,
     destinationX: 0,
@@ -13,23 +25,31 @@ const CustomCursor = () => {
     key: -1,
   });
 
-  React.useEffect(() => {
-    document.addEventListener("mousemove", (event) => {
+  useEffect(() => {
+    const handleMouseMove = (event: MouseEvent) => {
       const { clientX, clientY } = event;
 
       const mouseX = clientX;
       const mouseY = clientY;
 
-      positionRef.current.mouseX = mouseX - cursorSm.current.clientWidth / 2;
-      positionRef.current.mouseY = mouseY - cursorSm.current.clientHeight / 2;
-      positionRef.current.mouseX = mouseX - cursorLg.current.clientWidth / 2;
-      positionRef.current.mouseY = mouseY - cursorLg.current.clientHeight / 2;
-    });
+      positionRef.current.mouseX =
+        mouseX - (cursorSm.current?.clientWidth || 0) / 2;
+      positionRef.current.mouseY =
+        mouseY - (cursorSm.current?.clientHeight || 0) / 2;
+      positionRef.current.mouseX =
+        mouseX - (cursorLg.current?.clientWidth || 0) / 2;
+      positionRef.current.mouseY =
+        mouseY - (cursorLg.current?.clientHeight || 0) / 2;
+    };
 
-    return () => {};
+    document.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      document.removeEventListener("mousemove", handleMouseMove);
+    };
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const followMouse = () => {
       positionRef.current.key = requestAnimationFrame(followMouse);
       const {
@@ -58,11 +78,12 @@ const CustomCursor = () => {
           positionRef.current.destinationY += distanceY;
         }
       }
-      cursorSm.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
-      cursorLg.current.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+      cursorSm.current!.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
+      cursorLg.current!.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
     };
     followMouse();
   }, []);
+
   return (
     <>
       <div className="cs-cursor_lg" ref={cursorLg}></div>
