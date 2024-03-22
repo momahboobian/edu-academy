@@ -14,6 +14,7 @@ import About from "../_components/About";
 import Experience from "../_components/Experience";
 import Preloader from "../_components/Preloader";
 import CustomCursor from "../_components/CostomCursor";
+import Service from "../_components/Services";
 
 export default function HomePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,8 +23,8 @@ export default function HomePage() {
     heroData,
     aboutData,
     experienceData,
-    portfolioData,
     serviceData,
+    portfolioData,
     blogData,
     sliderData,
     contactData,
@@ -47,10 +48,10 @@ export default function HomePage() {
           <main className="wrapper">
             <CustomCursor />
 
-            <Hero data={heroData} />
-
+            {/*  <Hero data={heroData} />
             <About data={aboutData} />
-            <Experience data={experienceData} />
+            <Experience data={experienceData} /> */}
+            <Service data={serviceData} />
           </main>
         </>
       )}
