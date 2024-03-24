@@ -31,8 +31,8 @@ export default function HomePage() {
 
       <Hero data={heroData} />
       <About data={aboutData} />
-      {/* <Experience data={experienceData} /> 
-      <Service data={serviceData} />*/}
+      <Experience data={experienceData} />
+      {/*  <Service data={serviceData} />*/}
     </main>
   );
 }

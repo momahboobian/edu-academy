@@ -68,26 +68,32 @@
     }
   },
   "experienceData": {
-    "text": "Hello there! My name is Lilon Macwan. I am a web designer & developer, and Im very passionate and dedicated to my work.",
+    "text": "I have been nominated for numerous awards for BBC World Service, as well as other programs. I have appeared in a series of animated films in the role of a stallion and I directed the BBC ZigZag illustrated story project.",
     "resumeCv": "/Resume.pdf",
     "experience": [
       {
         "start": "2020",
         "end": "Present",
-        "title": "LEAD UI/UX DESIGNER",
-        "subtitle": "UI/UX Lead"
+        "title": "Teaching",
+        "subtitle": "In 2000, he traveled with a BBC team to Peshawar in northern Pakistan, "
+      },
+      {
+        "start": "2020",
+        "end": "Present",
+        "title": "Bolour-e Banafsh (Purple Crystal)",
+        "subtitle": "examines Iranian and Middle Eastern music, art, and culture"
       },
       {
         "start": "2017",
         "end": "2018",
-        "title": "SENIOR UI/UX DESIGNER",
-        "subtitle": "UI/UX Designer"
+        "title": "Seventh Night and Underground Music",
+        "subtitle": "Awards"
       },
       {
         "start": "2015",
         "end": "2017",
-        "title": "WEB DESIGN AND DEVELOPER",
-        "subtitle": "Jr. UI/UX Designer"
+        "title": "Music",
+        "subtitle": "in 1980, learned the setar instrument from Jalal Zolfonun and then turned to playing the tanbur and komuz."
       }
     ]
   },

@@ -1,8 +1,23 @@
 import PropTypes from "prop-types";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
+
 import SectionHeading from "./SectionHeading";
 
-const Experience = ({ data }) => {
+interface ExperienceProps {
+  data: {
+    text: string;
+    resumeCv: string;
+    experience: {
+      start: string;
+      end: string;
+      title: string;
+      subtitle: string;
+    }[];
+  };
+}
+
+export default function Experience({ data }: ExperienceProps) {
   const { text, experience, resumeCv } = data;
   return (
     <section className="section experience-section bg-g">
@@ -11,23 +26,23 @@ const Experience = ({ data }) => {
           <div className="col-lg-5">
             <div className="section-heading">
               <SectionHeading title="My Experience" subTitle="Experience" />
-              <p
-              // data-aos="fade-up"
-              // data-aos-duration="800"
-              // data-aos-delay="300"
+              <motion.p
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.3 }}
               >
                 {text}
-              </p>
-              <div
+              </motion.p>
+              <motion.div
                 className="btn-bar"
-                // data-aos="fade-up"
-                // data-aos-duration="800"
-                // data-aos-delay="200"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
               >
                 <a href={resumeCv} className="px-btn dark" download>
                   Download my resume <Icon icon="bi-download" />
                 </a>
-              </div>
+              </motion.div>
             </div>
           </div>
           <div className="col-lg-7 ps-xl-5">
@@ -53,10 +68,4 @@ const Experience = ({ data }) => {
       </div>
     </section>
   );
-};
-
-Experience.propTypes = {
-  data: PropTypes.object,
-};
-
-export default Experience;
+}
