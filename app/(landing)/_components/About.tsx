@@ -3,6 +3,7 @@
 import React from "react";
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import perser from "html-react-parser";
 
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
@@ -44,14 +45,15 @@ export default function About({ data }: AboutProps) {
     <section id="about" className="section about-section">
       <div className="container">
         <SectionHeading title="WELCOME TO..." subTitle="Nice to meet you!" />
-        <div className="row gy-4">
+
+        <motion.div
+          className="row gy-4"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           <div className="col-lg-5">
-            <motion.div
-              className="about-left"
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
+            <div className="about-left">
               <motion.div
                 className="about-avatar"
                 initial={{ opacity: 0, scale: 0.5 }}
@@ -67,42 +69,22 @@ export default function About({ data }: AboutProps) {
                   height={300}
                 />
               </motion.div>
-              <motion.h3
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-              >
-                {name}
-              </motion.h3>
-              <motion.p
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.8 }}
-              >
-                {designation}
-              </motion.p>
-              <motion.div
-                className="btn-bar"
-                initial={{ opacity: 0, y: -20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
-              >
+              <h3>{name}</h3>
+              <p>{perser(designation)}</p>
+              <div className="btn-bar">
                 <a className="px-btn" href={resumeCv} download>
-                  Download CV
+                  My work
                   <Icon icon="bi-download" />
                 </a>
-              </motion.div>
-            </motion.div>
+              </div>
+            </div>
           </div>
+
           <div className="col-lg-7 ps-xl-5">
-            <motion.div
-              className="about-bio"
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
+            <div className="about-bio">
               <p>{aboutText}</p>
-            </motion.div>
+            </div>
+
             <div className="about-contact row gx-lg-5">
               {contactInfo.map((element, index) => (
                 <div className="col-sm-6" key={index}>
@@ -113,6 +95,7 @@ export default function About({ data }: AboutProps) {
                 </div>
               ))}
             </div>
+
             <div className="about-exp">
               <div className="row gy-4">
                 {achievement.map((element, index) => (
@@ -125,13 +108,14 @@ export default function About({ data }: AboutProps) {
                   </div>
                 ))}
               </div>
+
               <blockquote>
                 <Icon icon="fa6-solid:quote-left" />
                 <p>{note}</p>
               </blockquote>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

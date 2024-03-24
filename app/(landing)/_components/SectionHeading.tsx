@@ -14,7 +14,7 @@ export default function SectionHeading({
       <motion.h6
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.1 }}
       >
         {subTitle}
       </motion.h6>
