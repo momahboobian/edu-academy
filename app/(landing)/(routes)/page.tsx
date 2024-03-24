@@ -1,12 +1,16 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+// import "bootstrap/dist/js/bootstrap.bundle";
+
 import data from "../data.json";
 import Hero from "../_components/Hero";
 import About from "../_components/About";
 import Experience from "../_components/Experience";
-import Preloader from "../_components/Preloader";
 import CustomCursor from "../_components/CustomCursor";
 import Service from "../_components/Services";
+import Aos from "aos";
 
 export default function HomePage() {
   const {
@@ -23,12 +27,12 @@ export default function HomePage() {
 
   return (
     <main className="wrapper">
-      <CustomCursor />
+      {/* <CustomCursor /> */}
 
       <Hero data={heroData} />
       <About data={aboutData} />
-      <Experience data={experienceData} />
-      {/* <Service data={serviceData} /> */}
+      {/* <Experience data={experienceData} /> 
+      <Service data={serviceData} />*/}
     </main>
   );
 }

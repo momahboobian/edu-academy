@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Icon } from "@iconify/react";
+import { motion } from "framer-motion";
 
 import SectionHeading from "./SectionHeading";
 import Image from "next/image";
@@ -43,40 +44,65 @@ export default function About({ data }: AboutProps) {
     <section id="about" className="section about-section">
       <div className="container">
         <SectionHeading title="WELCOME TO..." subTitle="Nice to meet you!" />
-        <div
-          className="row gy-4"
-          data-aos="fade-up"
-          data-aos-duration="800"
-          data-aos-delay="500"
-        >
+        <div className="row gy-4">
           <div className="col-lg-5">
-            <div className="about-left">
-              <div className="about-avatar">
+            <motion.div
+              className="about-left"
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <motion.div
+                className="about-avatar"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
+              >
                 <Image
                   src={ImgLink}
                   alt="Thumb"
                   sizes="100vw"
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                  }}
+                  style={{ width: "100%", height: "auto" }}
                   width={500}
                   height={300}
                 />
-              </div>
-              <h3>{name}</h3>
-              <p>{designation}</p>
-              <div className="btn-bar">
+              </motion.div>
+              <motion.h3
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+              >
+                {name}
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+              >
+                {designation}
+              </motion.p>
+              <motion.div
+                className="btn-bar"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 1 }}
+              >
                 <a className="px-btn" href={resumeCv} download>
-                  Download CV <Icon icon="bi-download" />
+                  Download CV
+                  <Icon icon="bi-download" />
                 </a>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
           <div className="col-lg-7 ps-xl-5">
-            <div className="about-bio">
+            <motion.div
+              className="about-bio"
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.8 }}
+            >
               <p>{aboutText}</p>
-            </div>
+            </motion.div>
             <div className="about-contact row gx-lg-5">
               {contactInfo.map((element, index) => (
                 <div className="col-sm-6" key={index}>

@@ -12,17 +12,17 @@ const Experience = ({ data }) => {
             <div className="section-heading">
               <SectionHeading title="My Experience" subTitle="Experience" />
               <p
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay="300"
+              // data-aos="fade-up"
+              // data-aos-duration="800"
+              // data-aos-delay="300"
               >
                 {text}
               </p>
               <div
                 className="btn-bar"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay="200"
+                // data-aos="fade-up"
+                // data-aos-duration="800"
+                // data-aos-delay="200"
               >
                 <a href={resumeCv} className="px-btn dark" download>
                   Download my resume <Icon icon="bi-download" />
@@ -33,7 +33,11 @@ const Experience = ({ data }) => {
           <div className="col-lg-7 ps-xl-5">
             <ul className="resume-box">
               {experience.map((element, index) => (
-                <li key={index} data-aos="fade-up" data-aos-duration="800">
+                <li
+                  key={index}
+                  // data-aos="fade-up"
+                  // data-aos-duration="800"
+                >
                   <div className="r-meta">
                     <span>
                       -{element.start} - {element.end}

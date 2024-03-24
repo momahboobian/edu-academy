@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 interface SectionHeadingProps {
   title: string;
   subTitle: string;
@@ -9,12 +11,20 @@ export default function SectionHeading({
 }: SectionHeadingProps) {
   return (
     <div className="section-heading">
-      <h6 data-aos="fade-up" data-aos-duration="800" data-aos-delay="100">
+      <motion.h6
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         {subTitle}
-      </h6>
-      <h2 data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+      </motion.h6>
+      <motion.h2
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+      >
         {title}
-      </h2>
+      </motion.h2>
     </div>
   );
 }

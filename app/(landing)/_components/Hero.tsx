@@ -1,12 +1,10 @@
-import { Icon } from "@iconify/react";
-import { useEffect } from "react";
-import parser from "html-react-parser";
-import { Link as ScrollLink } from "react-scroll";
+import { useEffect, useState } from "react";
 
-interface SocialData {
-  icon: string;
-  link: string;
-}
+import { motion, useInView, useViewportScroll } from "framer-motion";
+import { Link as ScrollLink } from "react-scroll";
+import parser from "html-react-parser";
+
+import { Icon } from "@iconify/react";
 
 interface HeroProps {
   data: {
@@ -19,8 +17,13 @@ interface HeroProps {
   };
 }
 
+interface SocialData {
+  icon: string;
+  link: string;
+}
+
 export default function Hero({ data }: HeroProps) {
-  const { title, subTitle, ImgLink, phone, email, socialData } = data;
+  const { title, subTitle, ImgLink, socialData } = data;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,62 +43,53 @@ export default function Hero({ data }: HeroProps) {
 
   return (
     <section id="home" className="home-section bg-dark">
-      <div className="container">
-        <div className="row  min-vh-100 align-items-center">
+      <div className="container mx-auto">
+        <div className="row min-vh-100 align-items-center">
           <div className="col-lg-7 col-xl-7 col-xxl-6">
             <div className="hb-text">
-              <h1
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay="200"
+              <motion.h1
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2 }}
               >
                 {parser(title)}
-              </h1>
-              <p
+              </motion.h1>
+
+              <motion.p
                 className="lead"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay="400"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4 }}
               >
                 {parser(subTitle)}
-              </p>
-              <div
+              </motion.p>
+
+              <motion.div
                 className="mt-6"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay="500"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.5 }}
               >
                 <ScrollLink to="contact" spy={true} className="px-btn">
                   About ME
                   <Icon icon="bi:arrow-up-right" />
                 </ScrollLink>
-              </div>
-              <div
-                className="mt-6"
-                data-aos="fade-up"
-                data-aos-duration="800"
-                data-aos-delay="600"
-              >
-                {/* <p>
-                  <Icon icon="bi-phone" />
-                  <span>{phone}</span>
-                </p>
-                <p>
-                  <Icon icon="bi-envelope" />
-                  <span>{email}</span>
-                </p> */}
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </div>
-      <div
+
+      <motion.div
         className="hb-me"
-        style={{ backgroundImage: `url(${ImgLink})` }}
-        data-aos="fade-left"
-        data-aos-duration="800"
-        data-aos-delay="800"
+        style={{
+          backgroundImage: `url(${ImgLink})`,
+        }}
+        initial={{ opacity: 0, x: 150 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
       />
+
       <div className="social-fix">
         <div className="social-links">
           {socialData.map((element, index) => (

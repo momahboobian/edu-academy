@@ -1,10 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Icon } from "@iconify/react";
 import Link from "next/link";
 import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 
 import Logo from "../../../components/Logo";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 // import { socialData } from "../data.json";
 
 interface HeaderProps {
@@ -138,7 +141,7 @@ export default function Header({ data }: HeaderProps) {
             </ScrollLink>
           </li>
         </ul>
-        <ul className=" social-link flex">
+        <ul className="social-link flex">
           {socialData.map((element, index) => (
             <li key={index}>
               <a href={element.link} target="_blank" rel="noopener noreferrer">
