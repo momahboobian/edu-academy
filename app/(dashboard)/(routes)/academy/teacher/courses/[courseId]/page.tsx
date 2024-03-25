@@ -19,7 +19,6 @@ import PriceForm from "./_components/PriceForm";
 import AttachmentForm from "./_components/AttachmentForm";
 import ChaptersForm from "./_components/ChaptersForm";
 import CourseActions from "./_components/CourseActions";
-import { isUploadable } from "@mux/mux-node/uploads.mjs";
 
 export default async function CourseIdPage({
   params,
