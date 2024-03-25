@@ -12,6 +12,7 @@ import Portfolio from "../_components/Portfolio";
 import Courses from "../_components/CoursesProps";
 import Blog from "../_components/Blog";
 import Contact from "../_components/Contact";
+import Footer from "../_components/Footer";
 
 export default function HomePage() {
   const {
@@ -37,6 +38,7 @@ export default function HomePage() {
       <Courses data={coursesData} />
       <Blog data={blogData} />
       <Contact data={contactData} />
+      <Footer data={footerData} />
     </main>
   );
 }
