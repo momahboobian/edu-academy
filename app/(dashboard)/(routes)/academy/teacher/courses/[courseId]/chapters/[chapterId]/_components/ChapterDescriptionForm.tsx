@@ -20,8 +20,8 @@ import { Button } from "@/components/ui/button";
 
 import { Pencil } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Editor } from "@/components/Editor";
-import { Preview } from "@/components/Preview";
+// import Editor from "@/components/Editor";
+// import Preview from "@/components/Preview";
 
 interface ChapterDescriptionFormProps {
   initialData: Chapter;
@@ -92,9 +92,9 @@ export default function ChapterDescriptionForm({
           )}
         >
           {!initialData.description && "No description"}
-          {initialData.description && (
+          {/* {initialData.description && (
             <Preview value={initialData.description} />
-          )}
+          )} */}
         </div>
       )}
       {isEditing && (
@@ -108,9 +108,7 @@ export default function ChapterDescriptionForm({
               name="description"
               render={({ field }) => (
                 <FormItem>
-                  <FormControl>
-                    <Editor {...field} />
-                  </FormControl>
+                  <FormControl>{/* <Editor {...field} /> */}</FormControl>
                   <FormMessage />
                 </FormItem>
               )}

@@ -9,7 +9,7 @@ import {
 
 import { db } from "@/lib/db";
 import IconBadge from "@/components/IconBadge";
-import Banner from "@/components/Banner";
+// import Banner from "@/components/Banner";
 
 import TitleForm from "./_components/TitleForm";
 import DescriptionForm from "./_components/DescriptionForm";
@@ -78,9 +78,9 @@ export default async function CourseIdPage({
 
   return (
     <>
-      {!course.isPublished && (
+      {/* {!course.isPublished && (
         <Banner label="This course is unpublished. It will not be visible to the students." />
-      )}
+      )} */}
       <div className="p-6 ">
         <div className="flex items-center justify-between">
           <div className="flex flex-col gap-y-2">

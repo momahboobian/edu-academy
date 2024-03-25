@@ -5,10 +5,10 @@ import { File } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
 
 import { getChapter } from "@/actions/get-chapters";
-import Banner from "@/components/Banner";
+// import Banner from "@/components/Banner";
 import VideoPlayer from "./_components/VideoPlayer";
 import CourseEnrollButton from "./_components/CourseEnrollButton";
-import { Preview } from "@/components/Preview";
+// import Preview from "@/components/Preview";
 
 export default async function ChapterIdPage({
   params,
@@ -44,12 +44,12 @@ export default async function ChapterIdPage({
 
   return (
     <div>
-      {userProgress?.isCompleted && (
+      {/* {userProgress?.isCompleted && (
         <Banner variant="success" label="You already completed this chapter." />
       )}
       {isLocked && (
         <Banner variant="warning" label="You need to purchase this chapter." />
-      )}
+      )} */}
 
       <div className="flex flex-col max-w-4xl mx-auto pd-20">
         <div className="p-4">
@@ -76,9 +76,7 @@ export default async function ChapterIdPage({
             )}
           </div>
           <Separator />
-          <div>
-            <Preview value={chapter.description!} />
-          </div>
+          <div>{/* <Preview value={chapter.description!} /> */}</div>
           {!!attachments.length && (
             <>
               <Separator />

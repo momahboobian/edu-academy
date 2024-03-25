@@ -5,7 +5,7 @@ import { ArrowLeft, Eye, LayoutDashboard, Video } from "lucide-react";
 
 import { db } from "@/lib/db";
 import IconBadge from "@/components/IconBadge";
-import Banner from "@/components/Banner";
+// import Banner from "@/components/Banner";
 
 import ChapterTitleForm from "./_components/ChapterTitleForm";
 import ChapterDescriptionForm from "./_components/ChapterDescriptionForm";
@@ -49,12 +49,12 @@ export default async function ChapterIdPage({
 
   return (
     <>
-      {!chapter.isPublished && (
+      {/* {!chapter.isPublished && (
         <Banner
           variant="warning"
           label="This chapter is unpublished. It will not be visible in the course"
         />
-      )}
+      )} */}
       <div className="p-6">
         <div className="flex items-center justify-between">
           <div className="w-full">
