@@ -3,7 +3,28 @@ import { Icon } from "@iconify/react";
 
 import SectionHeading from "./SectionHeading";
 
-interface ContactProps {}
+interface ContactInfo {
+  icon: string;
+  title: string;
+  text: string;
+  emailLink?: string;
+}
+
+interface ContactForm {
+  title: string;
+  text: string;
+}
+
+interface ContactData {
+  contactInfo: ContactInfo[];
+  contactForm: ContactForm;
+}
+
+interface ContactProps {
+  data: {
+    contactData: ContactData;
+  };
+}
 
 export default function Contact({ data }: ContactProps) {
   const { contactInfo, contactForm } = data;
@@ -15,7 +36,6 @@ export default function Contact({ data }: ContactProps) {
     subject: "",
     message: "",
   });
-
   // Handler for input field changes
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -48,6 +68,7 @@ export default function Contact({ data }: ContactProps) {
       setLoading(false);
     }
   };
+
   return (
     <section
       id="contact"
@@ -78,7 +99,7 @@ export default function Contact({ data }: ContactProps) {
                           {element.emailLink && (
                             <a
                               className="text-reset"
-                              href="mailto:info@domainname.com"
+                              href={`mailto:${element.emailLink}`}
                             >
                               {element.emailLink}
                             </a>
