@@ -80,7 +80,7 @@ export default function ChaptersForm({
   };
 
   const onEdit = (id: string) => {
-    router.push(`/teacher/courses/${courseId}/chapters/${id}`);
+    router.push(`/academy/teacher/courses/${courseId}/chapters/${id}`);
   };
 
   return (
