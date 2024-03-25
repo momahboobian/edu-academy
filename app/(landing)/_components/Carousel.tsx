@@ -15,9 +15,9 @@ export default function Carousel({ data }: CarouselProps) {
   if (useFor === "testimonial") {
     return (
       <Slider {...settings}>
-        {info.map((element, index) => (
+        {/* {info.map((element, index) => (
           <Singletestimonia element={element} key={index} />
-        ))}
+        ))} */}
       </Slider>
     );
   } else if (useFor === "brand") {
