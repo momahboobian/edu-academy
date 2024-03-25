@@ -15,14 +15,10 @@ interface ContactForm {
   text: string;
 }
 
-interface ContactData {
-  contactInfo: ContactInfo[];
-  contactForm: ContactForm;
-}
-
 interface ContactProps {
   data: {
-    contactData: ContactData;
+    contactInfo: ContactInfo[];
+    contactForm: ContactForm;
   };
 }
 
@@ -37,7 +33,8 @@ export default function Contact({ data }: ContactProps) {
     message: "",
   });
   // Handler for input field changes
-  const handleInputChange = (event) => {
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setFormData((prevFormData) => ({
       ...prevFormData,
@@ -45,10 +42,21 @@ export default function Contact({ data }: ContactProps) {
     }));
   };
 
-  const onSubmit = async (event) => {
+  // Event handler for textarea elements
+  const handleInputChangeForTextarea = (
+    event: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
+
+  const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setLoading(true);
-    const formData = new FormData(event.target);
+    const formData = new FormData(event.currentTarget);
     formData.append("access_key", "fcc74231-656a-425b-a54f-aff38354fadb");
 
     const object = Object.fromEntries(formData);
@@ -119,7 +127,7 @@ export default function Contact({ data }: ContactProps) {
                 <div className="ratio ratio-21x9">
                   <iframe
                     src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3151.840107317064!2d144.955925!3d-37.817214!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb6899234e561db11!2sEnvato!5e0!3m2!1sen!2sin!4v1520156366883"
-                    allowFullScreen=""
+                    allowFullScreen={true}
                   />
                 </div>
               </div>
@@ -194,7 +202,7 @@ export default function Contact({ data }: ContactProps) {
                         placeholder="Your message *"
                         rows={6}
                         className="form-control"
-                        onChange={handleInputChange}
+                        onChange={handleInputChangeForTextarea}
                         value={formData.message}
                         required
                       />
