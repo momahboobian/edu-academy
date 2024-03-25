@@ -11,7 +11,8 @@ interface ModalProps {
   img: string;
   link?: string;
   title: string;
-  subTitle: string;
+  date?: string;
+  subTitle?: string;
   paraList: { text: string }[];
   modalClose: () => void;
 }
@@ -20,6 +21,7 @@ export default function Modal({
   img,
   link,
   title,
+  date,
   subTitle,
   paraList,
   modalClose,
@@ -106,6 +108,8 @@ export default function Modal({
           </div>
 
           <div className="single-blog-content">
+            {date && <h6>{date}</h6>}
+
             {subTitle && <h5>{subTitle}</h5>}
             <h2>{title}</h2>
             {paraList &&

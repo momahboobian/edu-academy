@@ -1,13 +1,15 @@
 import { useState } from "react";
-import Carousel from "../Carousel/Carousel";
+import Image from "next/image";
+import { motion } from "framer-motion";
+
 import SectionHeading from "./SectionHeading";
+import Modal from "./Modal";
 
 interface BlogProps {
   data: {
     ImgLink: string;
-    link: string;
     title: string;
-    subTitle: string;
+    date: string;
     paragraphList: { text: string }[];
   }[];
 }
@@ -15,11 +17,26 @@ interface BlogProps {
 export default function Blog({ data }: BlogProps) {
   // Modal
   const [modal, setModal] = useState(false);
-  const [tempData, setTempData] = useState([]);
+  const [tempData, setTempData] = useState<{
+    ImgLink: string;
+    title: string;
+    date: string;
+    paragraphList: { text: string }[];
+  } | null>(null);
 
-  const getData = (imgLink, title, date, paragraphList) => {
+  const getData = (
+    imgLink: string,
+    title: string,
+    date: string,
+    paragraphList: { text: string }[]
+  ) => {
     let tempData = [imgLink, title, date, paragraphList];
-    setTempData((element) => [1, ...tempData]);
+    setTempData({
+      ImgLink: imgLink,
+      title: title,
+      date: date,
+      paragraphList: paragraphList,
+    });
     setModal(true);
   };
 
@@ -34,7 +51,7 @@ export default function Blog({ data }: BlogProps) {
           <SectionHeading title="Our Latest Update" subTitle="Our Blogs" />
           <div className="row gy-4">
             {data.map((element, index) => (
-              <div
+              <motion.div
                 className="col-lg-3 col-sm-6"
                 key={index}
                 onClick={() =>
@@ -45,14 +62,19 @@ export default function Blog({ data }: BlogProps) {
                     element.paragraphList
                   )
                 }
-                data-aos="fade-left"
-                data-aos-duration="800"
-                data-aos-delay={element.delay ? element.delay : "500"}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
               >
                 <div className="blog-post">
                   <div className="blog-post-img">
                     <a className="px_modal">
-                      <img src={element.ImgLink} title="" alt="blog-img" />
+                      <Image
+                        src={element.ImgLink}
+                        width={300}
+                        height={200}
+                        alt="blog-img"
+                      />
                     </a>
                   </div>
                   <div className="blog-post-info">
@@ -62,21 +84,19 @@ export default function Blog({ data }: BlogProps) {
                     </h2>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
       </div>
-      {modal === true ? (
+      {modal === true && tempData !== null && (
         <Modal
-          img={tempData[1]}
-          title={tempData[2]}
-          date={tempData[3]}
-          paraList={tempData[4]}
+          img={tempData.ImgLink}
+          title={tempData.title}
+          date={tempData.date}
+          paraList={tempData.paragraphList}
           modalClose={modalClose}
         />
-      ) : (
-        ""
       )}
     </section>
   );
