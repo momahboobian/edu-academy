@@ -16,8 +16,8 @@ export default function HomePage() {
     heroData,
     aboutData,
     experienceData,
-    serviceData,
     portfolioData,
+    coursesData,
     blogData,
     sliderData,
     contactData,
@@ -31,8 +31,8 @@ export default function HomePage() {
       <Hero data={heroData} />
       <About data={aboutData} />
       <Experience data={experienceData} />
-      <Portfolio data={serviceData} />
-      <Courses data={portfolioData} />
+      <Portfolio data={portfolioData} />
+      <Courses data={coursesData} />
     </main>
   );
 }

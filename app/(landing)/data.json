@@ -97,26 +97,26 @@
       }
     ]
   },
-  "serviceData": [
+  "portfolioData": [
     {
       "title": "TEACHING",
       "heading": "Perspiciatis vero deleniti dolor assumenda voluptatum animi",
       "trigger": "1",
-      "imgLink": "/images/services-1.jpg",
+      "imgLink": "/images/services-3.jpg",
       "text": "Perspiciatis vero deleniti dolor assumenda voluptatum animi ut repellendus sit dolorem asperiores! Porro ullam pariatur neque beatae. Suscipit veniam fugiat vero, dolores perspiciatis asperiores, labore aspernatur quis enim ex quibusdam laboriosam ipsam qui ullam nulla iusto blanditiis praesentium fugit quo officiis doloremque provident! Dignissimos praesentium alias aliquid fugiat nihil tenetur itaque perspiciatis."
     },
     {
       "title": "MUSIC",
       "heading": "You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template",
       "trigger": "2",
-      "imgLink": "/images/services-2.jpg",
+      "imgLink": "/images/services-1.jpg",
       "text": "Adipisci vitae ducimus voluptas veniam quidem, mollitia deserunt nihil, nulla cumque fugit laborum inventore similique, debitis neque tempore ipsa aspernatur? Necessitatibus vero ducimus molestiae doloribus reprehenderit modi vitae illum eos animi fugiat placeat blanditiis adipisci earum ab laborum id voluptates quo."
     },
     {
       "title": "SEVENTH NIGHT",
       "heading": "Neque quo numquam consequuntur odio porro quidem soluta amet eveniet. Similique eum cupiditate repellat ipsa.",
       "trigger": "3",
-      "imgLink": "/images/services-3.jpg",
+      "imgLink": "/images/services-2.jpg",
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla repellendus consequuntur! Ipsa perferendis explicabo reiciendis, quos sint nobis praesentium officia consequuntur! Ullam maxime, provident placeat nesciunt eius distinctio ipsam modi vel nam iste ea neque quo numquam consequuntur odio porro quidem soluta amet eveniet. Similique eum cupiditate repellat ipsa."
     },
     {
@@ -127,12 +127,12 @@
       "text": "Sint, mollitia accusamus odit inventore, veritatis eos repellendus nihil voluptates voluptatibus adipisci sequi exercitationem optio labore perferendis aliquid cupiditate, nesciunt doloremque? Quidem totam, quas neque repudiandae amet rem harum inventore quo! Fuga ad esse excepturi optio, sint cum laborum."
     }
   ],
-  "portfolioData": [
+  "coursesData": [
     {
       "ImgLink": "/images/services-1.jpg",
-      "subTitle": "UX case study",
-      "title": "Processor Research",
-      "link": "",
+      "subTitle": "Case study",
+      "title": "How to find the Subject",
+      "link": "https://www.youtube.com/watch?v=m1Cm1ivOjzU&pp",
       "paragraphList": [
         {
           "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -150,9 +150,9 @@
     },
     {
       "ImgLink": "/images/services-2.jpg",
-      "subTitle": "UX case study",
-      "title": "Artificial Research",
-      "link": "",
+      "subTitle": "Case study",
+      "title": "How to test the Truth",
+      "link": "https://www.youtube.com",
       "paragraphList": [
         {
           "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
@@ -170,8 +170,8 @@
     },
     {
       "ImgLink": "/images/services-3.jpg",
-      "subTitle": "UX case study",
-      "title": "Website Research",
+      "subTitle": "Case study",
+      "title": "How to find a topic",
       "link": "",
       "paragraphList": [
         {
@@ -190,9 +190,9 @@
     },
     {
       "ImgLink": "/images/services-4.jpg",
-      "subTitle": "UX case study",
-      "title": "Robotics Research",
-      "link": "",
+      "subTitle": "Development",
+      "title": "Developing a topic",
+      "link": "https://www.youtube.com/watch?v=m1Cm1ivOjzU&pp",
       "paragraphList": [
         {
           "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."

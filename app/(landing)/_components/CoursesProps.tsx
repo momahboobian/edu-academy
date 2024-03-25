@@ -9,26 +9,38 @@ import Modal from "./Modal";
 interface CoursesProps {
   data: {
     ImgLink: string;
+    link: string;
     title: string;
     subTitle: string;
-    paragraphList: string[];
+    paragraphList: { text: string }[];
   }[];
 }
 
 export default function Courses({ data }: CoursesProps) {
   // Modal
   const [modal, setModal] = useState(false);
-  const [tempData, setTempData] = useState([]);
+  const [tempData, setTempData] = useState<{
+    ImgLink: string;
+    link: string;
+    title: string;
+    subTitle: string;
+    paragraphList: { text: string }[];
+  } | null>(null);
 
   const getData = (
     imgLink: string,
+    link: string,
     title: string,
     subTitle: string,
-    paragraphList: string[]
+    paragraphList: { text: string }[]
   ) => {
-    console.log(imgLink, title, subTitle, paragraphList);
-    let tempData = [imgLink, title, subTitle, paragraphList];
-    setTempData((element) => [1, ...tempData]);
+    setTempData({
+      ImgLink: imgLink,
+      link: link,
+      title: title,
+      subTitle: subTitle,
+      paragraphList: paragraphList,
+    });
     setModal(true);
   };
 
@@ -40,7 +52,7 @@ export default function Courses({ data }: CoursesProps) {
     <section>
       <div id="courses" className="section work-section">
         <div className="container">
-          <SectionHeading title="Recent Courses" subTitle="My Work" />
+          <SectionHeading title="Recent Courses" subTitle="Courses" />
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
@@ -55,6 +67,7 @@ export default function Courses({ data }: CoursesProps) {
                     onClick={() =>
                       getData(
                         element.ImgLink,
+                        element.link,
                         element.title,
                         element.subTitle,
                         element.paragraphList
@@ -77,6 +90,7 @@ export default function Courses({ data }: CoursesProps) {
                         onClick={() =>
                           getData(
                             element.ImgLink,
+                            element.link,
                             element.title,
                             element.subTitle,
                             element.paragraphList
@@ -93,16 +107,15 @@ export default function Courses({ data }: CoursesProps) {
           </motion.div>
         </div>
       </div>
-      {modal === true ? (
+      {modal === true && tempData !== null && (
         <Modal
-          img={tempData[1]}
-          title={tempData[2]}
-          subTitle={tempData[3]}
-          paraList={tempData[4]}
+          img={tempData.ImgLink}
+          link={tempData.link}
+          title={tempData.title}
+          subTitle={tempData.subTitle}
+          paraList={tempData.paragraphList}
           modalClose={modalClose}
         />
-      ) : (
-        ""
       )}
     </section>
   );
