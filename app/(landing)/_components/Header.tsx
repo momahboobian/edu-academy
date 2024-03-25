@@ -50,7 +50,7 @@ export default function Header({ data }: HeaderProps) {
         <div className="mob-h-left">
           <Link href="/">
             <div className="navbar-brand">
-              <Logo size={180} invert="1" color="#fff" />
+              <Logo size={180} color="#fff" />
               {/* 
               <Image src={logoDark} width={100} height={50} alt="logo" />
               <Image src={logoLight} width={100} height={50} alt="logo" /> */}
@@ -73,7 +73,7 @@ export default function Header({ data }: HeaderProps) {
         {/* Brand */}
         <div className="logo">
           <Link href="/">
-            <Logo size={180} invert="1" color="#fff" />
+            <Logo size={180} color="#fff" />
           </Link>
         </div>
         {/* / */}
