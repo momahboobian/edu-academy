@@ -9,7 +9,7 @@ import Hero from "../_components/Hero";
 import About from "../_components/About";
 import Experience from "../_components/Experience";
 import Portfolio from "../_components/Portfolio";
-import Courses from "../_components/CoursesProps";
+import Courses from "../_components/Courses";
 import Blog from "../_components/Blog";
 import Contact from "../_components/Contact";
 import Footer from "../_components/Footer";

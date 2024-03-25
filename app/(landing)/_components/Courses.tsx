@@ -117,6 +117,15 @@ export default function Courses({ data }: CoursesProps) {
           modalClose={modalClose}
         />
       )}
+      <section className="section testimonials-section bg-g">
+        <div className="container">
+          <SectionHeading title="Upcoming Courses" subTitle="More Courses" />
+          <div className="testimonials">
+            {/* <Carousel data={testimonialInfo} /> */}
+            This is course Carousel
+          </div>
+        </div>
+      </section>
     </section>
   );
 }
