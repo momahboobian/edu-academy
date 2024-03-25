@@ -11,6 +11,7 @@ import Experience from "../_components/Experience";
 import Portfolio from "../_components/Portfolio";
 import Courses from "../_components/CoursesProps";
 import Blog from "../_components/Blog";
+import Contact from "../_components/Contact";
 
 export default function HomePage() {
   const {
@@ -35,6 +36,7 @@ export default function HomePage() {
       <Portfolio data={portfolioData} />
       <Courses data={coursesData} />
       <Blog data={blogData} />
+      <Contact data={contactData} />
     </main>
   );
 }
