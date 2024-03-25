@@ -99,30 +99,30 @@
   },
   "serviceData": [
     {
-      "title": "Web Design",
+      "title": "TEACHING",
       "heading": "Perspiciatis vero deleniti dolor assumenda voluptatum animi",
-      "triger": "One",
+      "trigger": "1",
       "imgLink": "/images/services-1.jpg",
       "text": "Perspiciatis vero deleniti dolor assumenda voluptatum animi ut repellendus sit dolorem asperiores! Porro ullam pariatur neque beatae. Suscipit veniam fugiat vero, dolores perspiciatis asperiores, labore aspernatur quis enim ex quibusdam laboriosam ipsam qui ullam nulla iusto blanditiis praesentium fugit quo officiis doloremque provident! Dignissimos praesentium alias aliquid fugiat nihil tenetur itaque perspiciatis."
     },
     {
-      "title": "UI/UX Design",
+      "title": "MUSIC",
       "heading": "You can customize a template or make your own from scratch, with an immersive library at your disposal. You can customize a template",
-      "triger": "Two",
+      "trigger": "2",
       "imgLink": "/images/services-2.jpg",
       "text": "Adipisci vitae ducimus voluptas veniam quidem, mollitia deserunt nihil, nulla cumque fugit laborum inventore similique, debitis neque tempore ipsa aspernatur? Necessitatibus vero ducimus molestiae doloribus reprehenderit modi vitae illum eos animi fugiat placeat blanditiis adipisci earum ab laborum id voluptates quo."
     },
     {
-      "title": "Mobile Application",
+      "title": "SEVENTH NIGHT",
       "heading": "Neque quo numquam consequuntur odio porro quidem soluta amet eveniet. Similique eum cupiditate repellat ipsa.",
-      "triger": "Three",
+      "trigger": "3",
       "imgLink": "/images/services-3.jpg",
       "text": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente nulla repellendus consequuntur! Ipsa perferendis explicabo reiciendis, quos sint nobis praesentium officia consequuntur! Ullam maxime, provident placeat nesciunt eius distinctio ipsam modi vel nam iste ea neque quo numquam consequuntur odio porro quidem soluta amet eveniet. Similique eum cupiditate repellat ipsa."
     },
     {
       "title": "User Research",
       "heading": "Sint, mollitia accusamus odit inventore, veritatis eos repellendus nihil voluptates voluptatibus adipisci",
-      "triger": "Four",
+      "trigger": "4",
       "imgLink": "/images/services-4.jpg",
       "text": "Sint, mollitia accusamus odit inventore, veritatis eos repellendus nihil voluptates voluptatibus adipisci sequi exercitationem optio labore perferendis aliquid cupiditate, nesciunt doloremque? Quidem totam, quas neque repudiandae amet rem harum inventore quo! Fuga ad esse excepturi optio, sint cum laborum."
     }

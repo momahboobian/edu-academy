@@ -1,109 +1,79 @@
-import { useState } from "react";
 import Image from "next/image";
-import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 import SectionHeading from "./SectionHeading";
-import Modal from "./Modal";
 
 interface PortfolioProps {
-  data: {
-    ImgLink: string;
-    title: string;
-    subTitle: string;
-    paragraphList: string[];
-  }[];
+  data: ServiceData[];
+}
+
+export interface ServiceData {
+  title: string;
+  heading: string;
+  imgLink: string;
+  text: string;
+  trigger: string;
 }
 
 export default function Portfolio({ data }: PortfolioProps) {
-  // Modal
-  const [modal, setModal] = useState(false);
-  const [tempData, setTempData] = useState([]);
-
-  const getData = (
-    imgLink: string,
-    title: string,
-    subTitle: string,
-    paragraphList: string[]
-  ) => {
-    console.log(imgLink, title, subTitle, paragraphList);
-    let tempData = [imgLink, title, subTitle, paragraphList];
-    setTempData((element) => [1, ...tempData]);
-    setModal(true);
-  };
-
-  const modalClose = () => {
-    setModal(false);
-  };
-
   return (
-    <section>
-      <div id="work" className="section work-section">
-        <div className="container">
-          <SectionHeading title="RECENT PROJECT" subTitle="My Work" />
+    <section id="work" className="section services-section bg-dark">
+      <div className="container">
+        <SectionHeading title="My Specialties" subTitle="My Work" />
+        <div className="accordion accordion-flush" id="accordion_services">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="row gy-5 lightbox-gallery"
           >
-            {data.map((element, index) => (
-              <div className="col-lg-6" key={index}>
-                <div className="work-box">
-                  <div
-                    className="work-img"
-                    onClick={() =>
-                      getData(
-                        element.ImgLink,
-                        element.title,
-                        element.subTitle,
-                        element.paragraphList
-                      )
-                    }
-                  >
-                    <Image
-                      src={element.ImgLink}
-                      alt="protfolio image"
-                      width={300}
-                      height={200}
-                    />
+            <Accordion
+              type="single"
+              collapsible
+              defaultValue={data[0].trigger}
+              className="w-full"
+            >
+              {data.map((element, index) => (
+                <AccordionItem value={element.trigger} key={index}>
+                  <div className="w-full">
+                    <AccordionTrigger className="pr-2">
+                      <span className="uppercase">{element.title}</span>
+
+                      <span className="hidden xl:block text-base	 font-light text-left ">
+                        {element.heading}
+                      </span>
+                    </AccordionTrigger>
                   </div>
-                  <div className="work-text">
-                    <h6>{element.subTitle}</h6>
-                    <h4>{element.title}</h4>
-                    <div className="btn-bar">
-                      <a
-                        className="gallery-link"
-                        onClick={() =>
-                          getData(
-                            element.ImgLink,
-                            element.title,
-                            element.subTitle,
-                            element.paragraphList
-                          )
-                        }
-                      >
-                        <Icon icon="bi:arrow-up-right" />
-                      </a>
+                  <AccordionContent className="accordion-body">
+                    <div className="row gy-4">
+                      <div className="col-sm-6 col-md-4">
+                        <div className="s-img">
+                          <Image
+                            src={element.imgLink}
+                            width={300}
+                            height={200}
+                            alt={`Service Image - ${element.title}`}
+                          />
+                        </div>
+                      </div>
+                      <div className="col-sm-6 col-md-8">
+                        <h3>{element.title}</h3>
+                        <div className="s-text">{element.text}</div>
+                      </div>
                     </div>
-                  </div>
-                </div>
-              </div>
-            ))}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
           </motion.div>
         </div>
       </div>
-      {modal === true ? (
-        <Modal
-          img={tempData[1]}
-          title={tempData[2]}
-          subTitle={tempData[3]}
-          paraList={tempData[4]}
-          modalClose={modalClose}
-        />
-      ) : (
-        ""
-      )}
     </section>
   );
 }

@@ -9,7 +9,7 @@ import Hero from "../_components/Hero";
 import About from "../_components/About";
 import Experience from "../_components/Experience";
 import Portfolio from "../_components/Portfolio";
-import Service from "../_components/Services";
+import Courses from "../_components/CoursesProps";
 
 export default function HomePage() {
   const {
@@ -26,13 +26,13 @@ export default function HomePage() {
 
   return (
     <main className="wrapper">
-      {/* <CustomCursor /> */}
+      <CustomCursor />
 
       <Hero data={heroData} />
       <About data={aboutData} />
       <Experience data={experienceData} />
-      {/* <Service data={serviceData} /> */}
-      <Portfolio data={portfolioData} />
+      <Portfolio data={serviceData} />
+      <Courses data={portfolioData} />
     </main>
   );
 }

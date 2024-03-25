@@ -5,8 +5,6 @@ import Image from "next/image";
 import { Link as ScrollLink } from "react-scroll";
 
 import Logo from "../../../components/Logo";
-import Aos from "aos";
-import "aos/dist/aos.css";
 
 // import { socialData } from "../data.json";
 
@@ -90,6 +88,7 @@ export default function Header({ data }: HeaderProps) {
               Home
             </ScrollLink>
           </li>
+
           <li>
             <ScrollLink
               to="about"
@@ -100,16 +99,7 @@ export default function Header({ data }: HeaderProps) {
               About
             </ScrollLink>
           </li>
-          <li>
-            <ScrollLink
-              to="services"
-              spy={true}
-              duration={500}
-              onClick={() => setMobileToggle(false)}
-            >
-              Courses
-            </ScrollLink>
-          </li>
+
           <li>
             <ScrollLink
               to="work"
@@ -120,6 +110,18 @@ export default function Header({ data }: HeaderProps) {
               Portfolio
             </ScrollLink>
           </li>
+
+          <li>
+            <ScrollLink
+              to="courses"
+              spy={true}
+              duration={500}
+              onClick={() => setMobileToggle(false)}
+            >
+              Courses
+            </ScrollLink>
+          </li>
+
           <li>
             <ScrollLink
               to="blog"
