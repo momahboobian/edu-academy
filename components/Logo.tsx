@@ -3,10 +3,10 @@ import Image from "next/image";
 interface LogoProps {
   size: number;
   color: string;
-  invert?: boolean;
+  invert?: string;
 }
 
-export default function Logo({ size, color, invert = false }: LogoProps) {
+export default function Logo({ size, color, invert = "1" }: LogoProps) {
   return (
     <Image
       src="/logo.svg"
