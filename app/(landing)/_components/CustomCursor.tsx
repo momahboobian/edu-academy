@@ -1,6 +1,8 @@
+"use client";
+
 import React, { useEffect, useRef } from "react";
 
-const CustomCursor = () => {
+export default function CustomCursor() {
   const cursorSm = useRef<HTMLDivElement>(null);
   const cursorLg = useRef<HTMLDivElement>(null);
   const positionRef = useRef({
@@ -48,6 +50,7 @@ const CustomCursor = () => {
         distanceX,
         distanceY,
       } = positionRef.current;
+
       if (!destinationX || !destinationY) {
         positionRef.current.destinationX = mouseX;
         positionRef.current.destinationY = mouseY;
@@ -69,10 +72,11 @@ const CustomCursor = () => {
       cursorSm.current!.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
       cursorLg.current!.style.transform = `translate3d(${destinationX}px, ${destinationY}px, 0)`;
     };
-    followMouse();
+
+    const animationFrameId = requestAnimationFrame(followMouse);
 
     return () => {
-      cancelAnimationFrame(positionRef.current.key);
+      cancelAnimationFrame(animationFrameId);
     };
   }, []);
 
@@ -82,6 +86,4 @@ const CustomCursor = () => {
       <div className="cs-cursor_sm" ref={cursorSm}></div>
     </>
   );
-};
-
-export default CustomCursor;
+}

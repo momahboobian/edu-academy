@@ -40,12 +40,6 @@ export default function Modal({
     }
   };
 
-  const handleKeyDown = (event: KeyboardEvent) => {
-    if (event.key === "Escape") {
-      modalClose();
-    }
-  };
-
   const handleCloseModal = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>
   ) => {
@@ -55,11 +49,17 @@ export default function Modal({
   };
 
   useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        modalClose();
+      }
+    };
+
     document.body.addEventListener("keydown", handleKeyDown);
     return () => {
       document.body.removeEventListener("keydown", handleKeyDown);
     };
-  }, []);
+  }, [modalClose]);
 
   return (
     <div
