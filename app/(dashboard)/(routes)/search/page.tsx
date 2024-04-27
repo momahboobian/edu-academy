@@ -16,11 +16,11 @@ interface SearchPageProps {
 }
 
 export default async function SearchPage({ searchParams }: SearchPageProps) {
-  const { userId } = auth();
+  // const { userId } = auth();
 
-  if (!userId) {
-    return redirect("/");
-  }
+  // if (!userId) {
+  //   return redirect("/");
+  // }
 
   const categories = await db.category.findMany({
     orderBy: {
@@ -29,7 +29,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
   });
 
   const courses = await getCourses({
-    userId,
+    // userId,
     ...searchParams,
   });
 
