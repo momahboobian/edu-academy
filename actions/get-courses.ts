@@ -10,7 +10,7 @@ type CourseWithProgressWithCategory = Course & {
 };
 
 type GetCourses = {
-  userId: string;
+  userId?: string;
   title?: string;
   categoryId?: string;
 };
@@ -60,7 +60,9 @@ export const getCourses = async ({
             };
           }
 
-          const progressPercentage = await getProgress(userId, course.id);
+          const progressPercentage = userId
+            ? await getProgress(userId, course.id)
+            : null;
 
           return {
             ...course,
