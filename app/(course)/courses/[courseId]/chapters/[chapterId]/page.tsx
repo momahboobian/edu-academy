@@ -8,7 +8,7 @@ import { getChapter } from "@/actions/get-chapters";
 import Banner from "@/components/Banner";
 import VideoPlayer from "./_components/VideoPlayer";
 import CourseEnrollButton from "./_components/CourseEnrollButton";
-import { Preview } from "@/components/Preview";
+import Preview from "@/components/Preview";
 
 export default async function ChapterIdPage({
   params,

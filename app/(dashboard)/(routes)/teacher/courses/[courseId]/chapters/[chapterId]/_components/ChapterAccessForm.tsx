@@ -21,8 +21,8 @@ import { Button } from "@/components/ui/button";
 
 import { Pencil } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Editor } from "@/components/Editor";
-import { Preview } from "@/components/Preview";
+// import Editor from "@/components/Editor";
+// import Preview from "@/components/Preview";
 import { Checkbox } from "@/components/ui/checkbox";
 
 interface ChapterAccessFormProps {
