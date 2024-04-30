@@ -148,7 +148,12 @@ export default function ChapterVideoForm({
               ? "Upload this chapter's video via Mux."
               : "Enter the URL of the external video."}
           </div>
-          <Button onClick={onSubmit} className="mt-4">
+          <Button
+            onClick={(event) =>
+              onSubmit({ videoType: "external", videoUrl: "" })
+            }
+            className="mt-4"
+          >
             Save
           </Button>
         </div>
