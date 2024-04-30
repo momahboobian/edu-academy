@@ -39,8 +39,8 @@ export default function ChapterVideoForm({
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await axios.patch(`/api/courses/${courseId}/chapters/${chapterId}`, {
-        videoUrl,
-        videoType,
+        videoUrl: videoUrl,
+        videoType: "external",
       });
       toast.success("Chapter updated");
       toggleEdit();
@@ -149,9 +149,7 @@ export default function ChapterVideoForm({
               : "Enter the URL of the external video."}
           </div>
           <Button
-            onClick={(event) =>
-              onSubmit({ videoType: "external", videoUrl: "" })
-            }
+            onClick={(event) => onSubmit({ videoType, videoUrl })}
             className="mt-4"
           >
             Save
