@@ -19,6 +19,7 @@ interface ChapterVideoFormProps {
 }
 
 const formSchema = z.object({
+  videoType: z.enum(["mux", "external"]),
   videoUrl: z.string().min(1),
 });
 
@@ -28,6 +29,8 @@ export default function ChapterVideoForm({
   chapterId,
 }: ChapterVideoFormProps) {
   const [isEditing, setIsEditing] = useState(false);
+  const [videoType, setVideoType] = useState<"mux" | "external">("mux");
+  const [videoUrl, setVideoUrl] = useState<string>(initialData.videoUrl || "");
 
   const toggleEdit = () => setIsEditing((current) => !current);
 
@@ -35,10 +38,10 @@ export default function ChapterVideoForm({
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      await axios.patch(
-        `/api/courses/${courseId}/chapters/${chapterId}`,
-        values
-      );
+      await axios.patch(`/api/courses/${courseId}/chapters/${chapterId}`, {
+        videoUrl,
+        videoType,
+      });
       toast.success("Chapter updated");
       toggleEdit();
 
@@ -69,35 +72,85 @@ export default function ChapterVideoForm({
           )}
         </Button>
       </div>
-      {!isEditing &&
-        (!initialData.videoUrl ? (
-          <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
-            <VideoIcon className="h-10 w-10 text-slate-500" />
-          </div>
-        ) : (
-          <div className="relative aspect-video mt-2">
-            <MuPlayer playbackId={initialData?.muxData?.playbackId || ""} />
-          </div>
-        ))}
+      {!isEditing && (
+        <>
+          {!videoUrl ? (
+            <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
+              <VideoIcon className="h-10 w-10 text-slate-500" />
+            </div>
+          ) : (
+            <div className="relative aspect-video mt-2">
+              {videoType === "mux" ? (
+                <MuPlayer playbackId={initialData?.muxData?.playbackId || ""} />
+              ) : (
+                <iframe
+                  src={videoUrl}
+                  frameBorder="0"
+                  allowFullScreen
+                  className="w-full h-full"
+                ></iframe>
+              )}
+            </div>
+          )}
+          {initialData.videoUrl && (
+            <div className="text-xs text-muted-foreground mt-2">
+              Video can take a few minutes to process. Refresh the page if the
+              video does not appear.
+            </div>
+          )}
+        </>
+      )}
       {isEditing && (
         <div>
-          <FileUpload
-            endpoint="chapterVideo"
-            onChange={(url) => {
-              if (url) {
-                onSubmit({ videoUrl: url });
-              }
-            }}
-          />
-          <div className="text-ts text-muted-foreground mt-4">
-            Upload this chapter&apos;s video
+          <div className="flex items-center mt-2">
+            <label className="inline-flex items-center">
+              <input
+                type="radio"
+                className="form-radio h-4 w-4 text-indigo-600"
+                value="mux"
+                checked={videoType === "mux"}
+                onChange={() => setVideoType("mux")}
+              />
+              <span className="ml-2">Upload via Mux</span>
+            </label>
+            <label className="inline-flex items-center ml-6">
+              <input
+                type="radio"
+                className="form-radio h-4 w-4 text-indigo-600"
+                value="external"
+                checked={videoType === "external"}
+                onChange={() => setVideoType("external")}
+              />
+              <span className="ml-2">Use external link</span>
+            </label>
           </div>
-        </div>
-      )}
-      {initialData.videoUrl && !isEditing && (
-        <div className="text-xs text-muted-foreground mt-2">
-          Video can take a few minutes to process. Refresh the page if video
-          does not appear.
+          {videoType === "mux" && (
+            <FileUpload
+              endpoint="chapterVideo"
+              onChange={(url) => {
+                if (url) {
+                  setVideoUrl(url);
+                }
+              }}
+            />
+          )}
+          {videoType === "external" && (
+            <input
+              type="text"
+              className="border border-gray-300 rounded-md px-3 py-2 w-full mt-2"
+              placeholder="Enter video URL"
+              value={videoUrl}
+              onChange={(e) => setVideoUrl(e.target.value)}
+            />
+          )}
+          <div className="text-ts text-muted-foreground mt-4">
+            {videoType === "mux"
+              ? "Upload this chapter's video via Mux."
+              : "Enter the URL of the external video."}
+          </div>
+          <Button onClick={onSubmit} className="mt-4">
+            Save
+          </Button>
         </div>
       )}
     </div>
