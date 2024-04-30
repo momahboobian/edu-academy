@@ -1,13 +1,22 @@
 generator client {
   provider = "prisma-client-js"
-  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+  previewFeatures = ["fullTextSearch", "fullTextIndex", "multiSchema"]
+  binaryTargets   = ["native", "darwin"]
+
 }
 
 datasource db {
-  provider     = "mysql"
-  url          = env("DATABASE_URL")
-  relationMode = "prisma"
+  provider          = "postgresql"
+  url               = env("POSTGRES_PRISMA_URL")
+  directUrl         = env("POSTGRES_URL_NON_POOLING")
+  shadowDatabaseUrl = env("POSTGRES_URL_NON_POOLING")
+  schemas           = ["edu"]
 }
+// datasource db {
+//   provider     = "mysql"
+//   url          = env("DATABASE_URL")
+//   relationMode = "prisma"
+// }
 
 model Course {
   id          String       @id @default(uuid())
@@ -28,8 +37,11 @@ model Course {
   createdAt   DateTime     @default(now())
   updateAt    DateTime     @updatedAt()
 
+  @@schema("edu")
+
+
   @@index([categoryId])
-  @@fulltext([title])
+  // @@fulltext([title])
 
 }
 
@@ -37,6 +49,9 @@ model Category {
   id      String   @id @default(uuid())
   name    String   @unique
   courses Course[]
+
+  @@schema("edu")
+
 }
 
 model Attachment {
@@ -51,6 +66,9 @@ model Attachment {
   course    Course   @relation(fields: [courseId], references: [id], onDelete: Cascade)
 
   @@index([courseId])
+
+  @@schema("edu")
+
 }
 
 model Chapter {
@@ -73,6 +91,9 @@ model Chapter {
   updatedAt DateTime @updatedAt
 
   @@index([courseId])
+
+  @@schema("edu")
+
 }
 
 model MuxData {
@@ -82,6 +103,9 @@ model MuxData {
 
     chapterId String @unique
     chapter Chapter @relation(fields: [chapterId], references: [id], onDelete: Cascade)
+
+    @@schema("edu")
+
 }
 
 model UserProgress {
@@ -99,6 +123,9 @@ model UserProgress {
   @@index([chapterId])
   @@unique([userId, chapterId])
 
+  @@schema("edu")
+
+
 }
 
 model Purchase {
@@ -113,6 +140,9 @@ model Purchase {
 
    @@index([courseId])
    @@unique([userId, courseId])
+
+  @@schema("edu")
+
 }
 
 model StripeCustomer {
@@ -122,5 +152,8 @@ model StripeCustomer {
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@schema("edu")
+
 
 }
